@@ -28,7 +28,7 @@ struct Forecast: Decodable {
 // MARK: - Location
 struct Location: Decodable {
     let lat, lon: Double
-    let name, type: String
+    let name, type: String?
 }
 
 // MARK: - Timelines

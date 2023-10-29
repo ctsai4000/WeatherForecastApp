@@ -21,6 +21,7 @@
 		02930E9A2AEBFDA3002825D8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02930E992AEBFDA3002825D8 /* MainView.swift */; };
 		02930E9C2AEBFDBA002825D8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02930E9B2AEBFDBA002825D8 /* MainViewModel.swift */; };
 		02930E9E2AEBFFED002825D8 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02930E9D2AEBFFED002825D8 /* Forecast.swift */; };
+		02930EA02AEC28DD002825D8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02930E9F2AEC28DD002825D8 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		02930E992AEBFDA3002825D8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		02930E9B2AEBFDBA002825D8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		02930E9D2AEBFFED002825D8 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		02930E9F2AEC28DD002825D8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				02930E8B2AEBF925002825D8 /* WebService.swift */,
 				02930E8D2AEBF95D002825D8 /* NetworkRequest.swift */,
+				02930E9F2AEC28DD002825D8 /* LocationManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				02930E8C2AEBF925002825D8 /* WebService.swift in Sources */,
 				02930E9A2AEBFDA3002825D8 /* MainView.swift in Sources */,
+				02930EA02AEC28DD002825D8 /* LocationManager.swift in Sources */,
 				02930E632AEB4F5C002825D8 /* ContentView.swift in Sources */,
 				02930E8E2AEBF95D002825D8 /* NetworkRequest.swift in Sources */,
 				02930E9E2AEBFFED002825D8 /* Forecast.swift in Sources */,
@@ -509,6 +513,7 @@
 				DEVELOPMENT_TEAM = WQ64764U9V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To provide you local weather, we need to access your current location. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -538,6 +543,7 @@
 				DEVELOPMENT_TEAM = WQ64764U9V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To provide you local weather, we need to access your current location. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
