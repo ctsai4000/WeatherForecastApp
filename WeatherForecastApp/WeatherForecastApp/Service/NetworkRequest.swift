@@ -48,7 +48,7 @@ extension Requestable {
 
 extension Requestable {
     func getURLRequest() throws -> URLRequest {
-        guard var url = URL(string: baseUrl.appending(path)) else {
+        guard var url = URL(string: baseUrl.appending("/\(path)")) else {
             throw NetworkError.invalidUrl
         }
         url.append(queryItems: params)
