@@ -22,6 +22,7 @@
 		02930E9C2AEBFDBA002825D8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02930E9B2AEBFDBA002825D8 /* MainViewModel.swift */; };
 		02930E9E2AEBFFED002825D8 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02930E9D2AEBFFED002825D8 /* Forecast.swift */; };
 		02930EA02AEC28DD002825D8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02930E9F2AEC28DD002825D8 /* LocationManager.swift */; };
+		02DFEBF42AEDFAAE005250F5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DFEBF32AEDFAAE005250F5 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		02930E9B2AEBFDBA002825D8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		02930E9D2AEBFFED002825D8 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		02930E9F2AEC28DD002825D8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		02DFEBF32AEDFAAE005250F5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				02930E992AEBFDA3002825D8 /* MainView.swift */,
+				02DFEBF32AEDFAAE005250F5 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				02930EA02AEC28DD002825D8 /* LocationManager.swift in Sources */,
 				02930E632AEB4F5C002825D8 /* ContentView.swift in Sources */,
 				02930E8E2AEBF95D002825D8 /* NetworkRequest.swift in Sources */,
+				02DFEBF42AEDFAAE005250F5 /* DetailView.swift in Sources */,
 				02930E9E2AEBFFED002825D8 /* Forecast.swift in Sources */,
 				02930E612AEB4F5C002825D8 /* WeatherForecastAppApp.swift in Sources */,
 				02930E912AEBF98D002825D8 /* NetworkError.swift in Sources */,
@@ -435,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -492,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
