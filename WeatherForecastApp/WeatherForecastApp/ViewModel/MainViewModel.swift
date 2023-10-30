@@ -6,17 +6,13 @@
 //
 
 import Foundation
-enum ViewState {
-    case loading
-    case loaded
-    case error
-}
 
 class MainViewModel: ObservableObject {
     @Published var forecast: Forecast?
     @Published var realTime: Realtime?
     @Published var viewState = ViewState.loading
     @Published var location = ""
+    @Published var currentLocation = ""
     
     let webService: APIImplement
     init(webService: APIImplement) {

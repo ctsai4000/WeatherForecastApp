@@ -7,18 +7,6 @@
 
 import Foundation
 
-// MARK: - Realtime
-struct Realtime: Decodable {
-    let data: RealtimData
-    let location: Location
-}
-
-//MARK: - RealtimeData
-struct RealtimData: Decodable {
-    let time: String
-    let values: RealtimeValues
-}
-
 // MARK: - Forecast
 struct Forecast: Decodable {
     var timelines: Timelines
@@ -74,46 +62,6 @@ struct Daily: Decodable, Hashable {
 //    let time: String
 //    let values: [String: Double]
 //}
-
-// MARK: - WeatherCode
-enum WeatherCode: Int {
-    case clear = 1000
-    case mostClear = 1100
-    case partlyCloudy = 1101
-    case mostlyCloudy = 1102
-    case cloudy = 1001
-    case lightFog = 2100
-    case fog = 2000
-    case drizzle = 4000
-    case lightRain = 4200
-    case rain = 4001
-    case heavyRain = 4201
-    case flurries = 5001
-    case lightSnow = 5100
-    case snow = 5000
-    case heavySnow = 5101
-    case freezingDrizzle = 6000
-    case lightFreezingDrizzle = 6200
-    case freezingRain = 6001
-    case heavyFreezingRain = 6201
-    case thunderStorm = 8000
-}
-
-// MARK: - RealtimeValues
-struct RealtimeValues: Decodable {
-    let cloudCeiling, cloudCover: Double?
-    let dewPoint: Double
-    let freezingRainIntensity: Double
-    let humidity: Double
-    let precipitationProbability: Double
-    let pressureSurfaceLevel: Double
-    let rainIntensity, sleetIntensity, snowIntensity: Double
-    let temperature, temperatureApparent: Double
-    let uvHealthConcern, uvIndex: Double
-    let visibility: Double
-    let weatherCode: Double
-    let windDirection, windGust, windSpeed: Double
-}
 
 // MARK: - DailyValues
 struct DailyValues: Decodable, Hashable {
