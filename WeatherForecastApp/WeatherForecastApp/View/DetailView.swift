@@ -39,6 +39,7 @@ struct DetailView: View {
             }
             
             VStack(spacing: 20) {
+                //SearchBar
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(Color.white.opacity(0.5))
@@ -49,17 +50,13 @@ struct DetailView: View {
                                 Text("Search for a city")
                         .foregroundColor(Color.white.opacity(0.5))
                     )
-                    .foregroundColor(.white)
-                    .onChange(of: query){ newquery in
-                        if newquery.count > 3 {
-                            mainViewModel.location = newquery
-                            mainViewModel.searchForRealtime(location: newquery)
-                            mainViewModel.searchForForecast(location: newquery)
-                        } else {
-                            mainViewModel.searchForRealtime(location: mainViewModel.currentLocation)
-                            mainViewModel.searchForForecast(location: mainViewModel.currentLocation)
-                        }
+                    .submitLabel(.search)
+                    .onSubmit {
+                        mainViewModel.location = query
+                        mainViewModel.searchForRealtime(location: query)
+                        mainViewModel.searchForForecast(location: query)
                     }
+                    .foregroundColor(.white)
                 }
                 .frame(height: 40)
                 .background {
@@ -69,6 +66,7 @@ struct DetailView: View {
                 .font(.system(size: 19))
                 .fontWeight(.regular)
                 
+                //RealTime Weather
                 VStack(spacing: -2) {
                     HStack(spacing: 5) {
                         if let locationName = realtime.location.name {
@@ -84,9 +82,13 @@ struct DetailView: View {
                         .fontWeight(.thin)
                         .font(.system(size: 102))
                     if let weatherDes = WeatherCode(rawValue: Int(realtime.data.values.weatherCode.rounded())) {
-                        Text("\(weatherDes)".titlecased())
-                            .fontWeight(.regular)
+                        HStack {
+                            Image("\(weatherDes)")
+                                .frame(minWidth: 28, alignment: .center)
+                            Text("\(weatherDes)".titlecased())
+                                .fontWeight(.regular)
                             .font(.system(size: 24))
+                        }
                     }
                     
                     HStack(spacing: 5) {
@@ -104,6 +106,7 @@ struct DetailView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
                 
+                //Forecast
                 VStack {
                     HStack {
                         Image(systemName: "calendar")

@@ -26,7 +26,7 @@ struct MainView: View {
             case .authorizedAlways, .authorizedWhenInUse, .authorized:
                 switch viewModel.viewState {
                 case .error:
-                    ErrorView()
+                    ErrorView(locationManager: locationManager, mainViewModel: viewModel)
                 case .loaded:
                     if let realTime = Binding($viewModel.realTime), let forecast = Binding($viewModel.forecast) {
                         DetailView(mainViewModel: viewModel, realtime: realTime, forecast: forecast)

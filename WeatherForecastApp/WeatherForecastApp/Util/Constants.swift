@@ -10,7 +10,7 @@ import Foundation
 struct Constants {
     static let headers = ["accept": "application/json"]
     static let baseWeatherUrl = "https://api.tomorrow.io/v4/weather"
-    static let apiKey = URLQueryItem(name: "apikey", value: "3DUmqqWrL6tHJqBhJTwoMnlCCayyr7ie")
+    static let apiKey = URLQueryItem(name: "apikey", value: "tK1IIIWvbBWW9ikCxeiRhPM17WzRNdAK")
     static let mockRealtimeValues = RealtimeValues(cloudCeiling: 0.28,
                                         cloudCover: 0.28,
                                         dewPoint: 13.13,
@@ -34,7 +34,7 @@ struct Constants {
                             lon: -79.3839340209961,
                             name: "Old Toronto, Toronto, Golden Horseshoe, Ontario, Canada",
                             type: "administrative")
-    static let mockRealtime = Realtime(data: RealtimData(time: "2023-10-27T15:01:00Z",
+    static let mockRealtime = Realtime(data: RealtimeData(time: "2023-10-27T15:01:00Z",
                                               values: mockRealtimeValues),
                             location: mockLocation)
     static let mockDailyValues = DailyValues(sunriseTime: "2023-01-25T21:40:00Z",

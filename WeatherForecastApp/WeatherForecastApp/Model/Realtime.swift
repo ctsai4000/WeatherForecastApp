@@ -9,12 +9,12 @@ import Foundation
 
 // MARK: - Realtime
 struct Realtime: Decodable {
-    let data: RealtimData
+    let data: RealtimeData
     let location: Location
 }
 
 //MARK: - RealtimeData
-struct RealtimData: Decodable {
+struct RealtimeData: Decodable {
     let time: String
     let values: RealtimeValues
 }
