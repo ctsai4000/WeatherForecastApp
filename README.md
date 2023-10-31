@@ -27,3 +27,6 @@
     The api has strict limitation for free account, which is a challenge for developing. Developer needs over hundreds times to test the app and make sure the data is well-parsed, the seaching feature works fine, and all the weather information are displayed correctly. Hence, I use mock JSON data, which is one of the way to do the test. In this way, we can test the app by using local data. Also, to avoid too many api calls, I use a search submit button to submit the query, not onChange() function to trigger the api calls thousand times. 
 
 # Screenshots
+
+https://github.com/ctsai4000/WeatherForecastApp/assets/149118434/8ca08677-d67d-4c39-a81b-ecb2061fa228
+
