@@ -25,8 +25,10 @@ struct MainView: View {
                     }
             case .authorizedAlways, .authorizedWhenInUse, .authorized:
                 switch viewModel.viewState {
-                case .error:
-                    ErrorView(locationManager: locationManager, mainViewModel: viewModel)
+                case let .error(msg):
+                    ErrorView(locationManager: locationManager, 
+                              mainViewModel: viewModel,
+                              errorMassage: msg)
                 case .loaded:
                     if let realTime = Binding($viewModel.realTime), let forecast = Binding($viewModel.forecast) {
                         DetailView(mainViewModel: viewModel, realtime: realTime, forecast: forecast)
@@ -49,10 +51,12 @@ struct MainView: View {
                    secondaryButton: .destructive(Text("Cancel")))
         }
         .onAppear {
-            if let latitude = locationManager.manager.location?.coordinate.latitude.description, let longitude = locationManager.manager.location?.coordinate.longitude {
-                viewModel.currentLocation = "\(latitude), \(longitude)"
-                viewModel.searchForRealtime(location: viewModel.currentLocation)
-                viewModel.searchForForecast(location: viewModel.currentLocation)
+            Task {
+                if let latitude = locationManager.manager.location?.coordinate.latitude.description, let longitude = locationManager.manager.location?.coordinate.longitude {
+                    viewModel.currentLocation = "\(latitude), \(longitude)"
+                    await viewModel.searchForRealtime(location: viewModel.currentLocation)
+                    await viewModel.searchForForecast(location: viewModel.currentLocation)
+                }
             }
         }
     }

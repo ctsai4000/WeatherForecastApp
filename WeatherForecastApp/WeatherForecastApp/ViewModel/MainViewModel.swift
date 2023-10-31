@@ -19,43 +19,29 @@ class MainViewModel: ObservableObject {
         self.webService = webService
     }
     @MainActor
-    func searchForForecast(location: String) {
-        let paramLocation = URLQueryItem(name: "location", value: location)
-        let networkRequest = NetworkRequest(baseUrl: "\(Constants.baseWeatherUrl)", 
-                                            path: "forecast",
-                                            params: [paramLocation, Constants.apiKey],
-                                            type: .GET,
-                                            headers: Constants.headers)
-        Task {
-            do {
-                let result = try await webService.fetchData(request: networkRequest, modelType: Forecast.self)
-                self.forecast = result
-                viewState = .loaded
-                print("forecast: \(result)")
-            } catch {
-                print(error)
-                viewState = .error
-            }
+    func searchForForecast(location: String) async {
+        do {
+            let result = try await webService.fetchData(location: location, path: "forecast", modelType: Forecast.self)
+            self.forecast = result
+            viewState = .loaded
+            print("forecast: \(result)")
+        } catch {
+            print(error)
+            viewState = .error(msg: error.localizedDescription)
         }
+        
     }
     @MainActor
-    func searchForRealtime(location: String) {
-        let paramLocation = URLQueryItem(name: "location", value: location)
-        let networkRequest = NetworkRequest(baseUrl: "\(Constants.baseWeatherUrl)", 
-                                            path: "realtime",
-                                            params: [paramLocation, Constants.apiKey],
-                                            type: .GET,
-                                            headers: Constants.headers)
-        Task {
-            do {
-                let result = try await webService.fetchData(request: networkRequest, modelType: Realtime.self)
-                self.realTime = result
-                viewState = .loaded
-                print("realtime: \(result)")
-            } catch {
-                print(error)
-                viewState = .error
-            }
+    func searchForRealtime(location: String) async {
+        do {
+            let result = try await webService.fetchData(location: location, path: "realtime", modelType: Realtime.self)
+            self.realTime = result
+            viewState = .loaded
+            print("realtime: \(result)")
+        } catch {
+            print(error)
+            viewState = .error(msg: error.localizedDescription)
         }
     }
+    
 }
