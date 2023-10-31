@@ -11,6 +11,7 @@ enum NetworkError: Error {
     case invalidUrl
     case invalidRequest
     case invalidResponseError
+    case outOfAPILimitation
     case failedToDecodeResponse
 }
 
@@ -28,6 +29,9 @@ extension NetworkError: LocalizedError {
             
         case .invalidResponseError:
             return NSLocalizedString("The server responds with an unexpected format or status code.", comment: "Invalid Response Error")
+            
+        case .outOfAPILimitation:
+            return NSLocalizedString("The server responds that api calls limitation is running out. ", comment: "API calls limitation running out")
         }
     }
 }

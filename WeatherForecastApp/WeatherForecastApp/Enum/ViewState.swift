@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum ViewState {
+enum ViewState: Equatable {
     case loading
     case loaded
-    case error
+    case error(msg: String)
 }

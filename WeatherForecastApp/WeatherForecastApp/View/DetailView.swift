@@ -52,9 +52,17 @@ struct DetailView: View {
                     )
                     .submitLabel(.search)
                     .onSubmit {
-                        mainViewModel.location = query
-                        mainViewModel.searchForRealtime(location: query)
-                        mainViewModel.searchForForecast(location: query)
+                        if query == "" {
+                            mainViewModel.location = mainViewModel.currentLocation
+                            print(query)
+                        } else {
+                            mainViewModel.location = query
+                        }
+                        Task {
+                            await mainViewModel.searchForRealtime(location: mainViewModel.location)
+                            await mainViewModel.searchForForecast(location: mainViewModel.location)
+                        }
+                        
                     }
                     .foregroundColor(.white)
                 }
@@ -128,8 +136,11 @@ struct DetailView: View {
                         }
                     }
                     .refreshable {
-                        mainViewModel.searchForForecast(location: mainViewModel.location)
-                        mainViewModel.searchForRealtime(location: mainViewModel.location)
+                        Task {
+                            await mainViewModel.searchForForecast(location: mainViewModel.location)
+                            await mainViewModel.searchForRealtime(location: mainViewModel.location)
+                        }
+                        
                     }
                     .listStyle(.plain)
                     .scrollContentBackground(.hidden)
